@@ -8,6 +8,9 @@
     {
         public static void Main()
         {
+            // Creates a dictionary to map string symbols to their respective operator classes. 
+            // The operator classes implement the IOperator interface.
+
             Dictionary<string, IOperator> operators = new()
             {
             { "+", new AdditionOperator() },
@@ -15,7 +18,10 @@
             { "*", new MultiplicationOperator() }
             };
 
+            // Initializes an instance of the ExpressionEvaluator class, passing the operators dictionary as a parameter.
             ExpressionEvaluator evaluator = new(operators);
+
+            // Defines an array of string expressions to evaluate.
 
             string[] expressions = new string[]
             {
@@ -25,6 +31,9 @@
             "2 * 3 - 1",
             "6 - 2 * 5"
             };
+
+            // For each expression in the expressions array,
+            // the expression is evaluated and the result is printed to the console.
 
             foreach (string expression in expressions)
             {
